@@ -19,8 +19,8 @@ bool solution(string s) {
     return true;
 }
 
-int main()
-{
-    string s = "234";//"1234";
-    bool ret = solution(s);
-}
+//int main()
+//{
+//    string s = "234";//"1234";
+//    bool ret = solution(s);
+//}
