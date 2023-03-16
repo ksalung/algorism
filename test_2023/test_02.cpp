@@ -12,7 +12,8 @@ bool solution(string s) {
     {
         char ch = c[i];
         int ch_num = atoi(&ch);
-        if (atoi("A") <= ch_num && atoi("Z") >= ch_num)
+        string str(1, ch);
+        if (atoi(str.c_str()) == 0)
             return false;
     }
     return true;
@@ -20,6 +21,6 @@ bool solution(string s) {
 
 int main()
 {
-    string s = "a234";//"1234";
+    string s = "234";//"1234";
     bool ret = solution(s);
 }
