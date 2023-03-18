@@ -49,10 +49,10 @@ int solution(int n, vector<int> lost, vector<int> reserve) {
     return answer;
 }
 
-int main()
-{
-    int n = 4;
-    vector<int> lost{ 1, 3, 4 };
-    vector<int> reserve{ 1, 3 };
-    int ret = solution(n, lost, reserve);
-}
+//int main()
+//{
+//    int n = 4;
+//    vector<int> lost{ 1, 3, 4 };
+//    vector<int> reserve{ 1, 3 };
+//    int ret = solution(n, lost, reserve);
+//}
