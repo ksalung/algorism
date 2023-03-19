@@ -22,49 +22,51 @@ else if (input[count] >= 97 && input[count] <= 122) // 소문자
 input[count] -= 32; //대문자 치환
 */
 
-string convert(char& str)
+string convert(char str, bool big)
 {
     string complete_value = "";
-    const char* ch = &str;
-    for (int i = 1; i <= strlen(ch); i++)
-    {
-        char str_compare = ch[i-1];
-        if (i % 2 == 0)
-        {
-            if (str_compare >= 97 && str_compare <= 122) // 소문자
-                str_compare -= 32;
-        }
-        else if (i % 2 == 1)
-        {
-            if (str_compare >= 65 && str_compare <= 90) // 대문자
-                str_compare += 32;
-        }
-        complete_value += str_compare;
-    }
+    char str_compare = str;
+       
+    if (big && str_compare >= 97 && str_compare <= 122) // 소문자
+        str_compare -= 32; //대문자
+
+    if (!big && str_compare >= 65 && str_compare <= 90) // 대문자
+        str_compare += 32; //소문자
+        
+    complete_value = str_compare;
     return complete_value;
 }
 
 string solution(string s) {
     string answer = "";
-    char* str = new char(s.length());
-    strcpy(str, s.c_str());
-    char* token = strtok(str, " ");
-    answer += (convert(*token) + " ");
-    while (token != NULL)
+    int arr_size = s.length();
+    char* str = new char(arr_size);
+    str = (char*)s.c_str();
+    //strcpy(str, s.c_str());
+    int letter_cnt = 0;
+    for(int i = 0; i < arr_size; i++)
     {
-        token = strtok(NULL, " ");
-        if (token == NULL)
+        if (s[i] == ' ')
         {
-            answer = answer.substr(0, answer.length()-1);
-            break;
+            letter_cnt = 0;
+            answer += " ";
         }
-        answer += convert(*token) + " ";
+        else
+        {
+            letter_cnt++;
+            if (letter_cnt % 2 == 0)
+                //answer += tolower(s[i]);
+                answer += convert(str[i], false);
+            else 
+                //answer += toupper(s[i]);
+                answer += convert(str[i], true);
+        }
     }
     return answer;
 }
 
 int main()
 {
-    string str = "try hello world";
+    string str = "  abc de   fghi   ";
     string ret = solution(str);
 }
