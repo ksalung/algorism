@@ -65,8 +65,8 @@ string solution(string s) {
     return answer;
 }
 
-int main()
-{
-    string str = "  abc de   fghi   ";
-    string ret = solution(str);
-}
+//int main()
+//{
+//    string str = "  abc de   fghi   ";
+//    string ret = solution(str);
+//}
