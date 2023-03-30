@@ -36,23 +36,23 @@ void make_numbers(int n, int k)
     make_numbers(value, k);
 }
 
-bool count_prime_num(string n)
-{
-    int prime_cnt = 0;
-    stringstream temp_str;
-    int num = 0;
-    temp_str << n;
-    temp_str >> num;
-    for (int i = 1; i <= num; i++)
-    {
-        if (num % i == 0)
-            prime_cnt++;
-    }
-    if (prime_cnt == 2)
-        return true;
-    else
-        return false;
-}
+//bool count_prime_num(string n)
+//{
+//    int prime_cnt = 0;
+//    stringstream temp_str;
+//    int num = 0;
+//    temp_str << n;
+//    temp_str >> num;
+//    for (int i = 1; i <= num; i++)
+//    {
+//        if (num % i == 0)
+//            prime_cnt++;
+//    }
+//    if (prime_cnt == 2)
+//        return true;
+//    else
+//        return false;
+//}
 
 bool isPrime(long long num) {
     if (num < 2) return false;
